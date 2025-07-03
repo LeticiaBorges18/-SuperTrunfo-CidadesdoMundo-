@@ -1,92 +1,55 @@
-#include <stdio.h>
+# Super Trunfo - Cidades do Mundo
 
-#define MAX_CARTAS 10
+Este é um exemplo simples de programa em linguagem C, inspirado no jogo **Super Trunfo**, com cartas de cidades e alguns atributos para cadastro e comparação.
 
-struct CartaCidade {
-    char estado[30];
-    int codigo;
-    char nomeCidade[50];
-    int populacao;
-    float pib;
-    float area;
-    int pontosTuristicos;
-    float densidadePopulacional;
-    float pibPerCapita;
-};
+## Funcionalidades
 
-void cadastrarCarta(struct CartaCidade *carta) {
-    printf("Digite o nome do estado: ");
-    scanf(" %[^\n]", carta->estado);
+- Cadastro de cartas de cidades, informando:
+  - Estado
+  - Código
+  - Nome da cidade
+  - População
+  - PIB (em bilhões)
+  - Área (em km²)
+  - Número de pontos turísticos
+- Cálculos automáticos:
+  - Densidade populacional
+  - PIB per capita
+- Listagem das cartas cadastradas
+- Menu simples de interação
 
-    printf("Digite o código da cidade: ");
-    scanf("%d", &carta->codigo);
+## Como compilar e executar
 
-    printf("Digite o nome da cidade: ");
-    scanf(" %[^\n]", carta->nomeCidade);
+1. Compile o código (exemplo para GCC):
+   ```
+   gcc super_trunfo_cidades.c -o super_trunfo_cidades
+   ```
+2. Execute o programa:
+   ```
+   ./super_trunfo_cidades
+   ```
 
-    printf("Digite a população da cidade: ");
-    scanf("%d", &carta->populacao);
+## Exemplo de uso
 
-    printf("Digite o PIB da cidade (em bilhões): ");
-    scanf("%f", &carta->pib);
+```
+Bem-vindo ao Super Trunfo - Cidades do Mundo!
 
-    printf("Digite a área da cidade (em km²): ");
-    scanf("%f", &carta->area);
+Menu:
+1 - Cadastrar nova carta
+2 - Listar cartas cadastradas
+0 - Sair
+Escolha uma opção: 1
+Digite o nome do estado: Bahia
+...
+```
 
-    printf("Digite o número de pontos turísticos: ");
-    scanf("%d", &carta->pontosTuristicos);
+## Possíveis melhorias
 
-    // Cálculos derivados
-    carta->densidadePopulacional = carta->populacao / carta->area;
-    carta->pibPerCapita = carta->pib * 1000000000 / carta->populacao;
-}
+- Comparar atributos entre cartas (como no jogo Super Trunfo original)
+- Salvar e carregar cartas em arquivos
+- Limitar ou expandir o número máximo de cartas
+- Interface gráfica
 
-void mostrarCarta(struct CartaCidade carta, int indice) {
-    printf("\n===== CARTA %d =====\n", indice+1);
-    printf("Estado: %s\n", carta.estado);
-    printf("Código: %d\n", carta.codigo);
-    printf("Cidade: %s\n", carta.nomeCidade);
-    printf("População: %d habitantes\n", carta.populacao);
-    printf("PIB: R$ %.2f bilhões\n", carta.pib);
-    printf("Área: %.2f km²\n", carta.area);
-    printf("Pontos turísticos: %d\n", carta.pontosTuristicos);
-    printf("Densidade populacional: %.2f hab/km²\n", carta.densidadePopulacional);
-    printf("PIB per capita: R$ %.2f\n", carta.pibPerCapita);
-    printf("====================\n");
-}
+---
 
-int main() {
-    struct CartaCidade cartas[MAX_CARTAS];
-    int quantidade = 0;
-    int opcao;
-
-    printf("Bem-vindo ao Super Trunfo - Cidades do Mundo!\n");
-
-    do {
-        printf("\nMenu:\n");
-        printf("1 - Cadastrar nova carta\n");
-        printf("2 - Listar cartas cadastradas\n");
-        printf("0 - Sair\n");
-        printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
-
-        if (opcao == 1) {
-            if (quantidade < MAX_CARTAS) {
-                cadastrarCarta(&cartas[quantidade]);
-                quantidade++;
-            } else {
-                printf("Limite de cartas atingido!\n");
-            }
-        } else if (opcao == 2) {
-            if (quantidade == 0) {
-                printf("Nenhuma carta cadastrada ainda.\n");
-            }
-            for (int i = 0; i < quantidade; i++) {
-                mostrarCarta(cartas[i], i);
-            }
-        }
-    } while (opcao != 0);
-
-    printf("Obrigado por jogar!\n");
-    return 0;
-}
+Feito para fins didáticos.
