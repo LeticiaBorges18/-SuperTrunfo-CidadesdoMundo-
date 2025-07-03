@@ -1,9 +1,10 @@
-# Ignore build output and editor files
+# Compilados C/C++
 *.o
-*.exe
 *.out
-*.obj
-*.log
-*.swp
-*.swo
-.DS_Store
+*.exe
+
+# Arquivo de cartas
+cartas.csv
+
+# Backup/temporários
+*~
