@@ -1,0 +1,9 @@
+# Ignore build output and editor files
+*.o
+*.exe
+*.out
+*.obj
+*.log
+*.swp
+*.swo
+.DS_Store
