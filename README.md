@@ -1,55 +1,39 @@
 # Super Trunfo - Cidades do Mundo
 
-Este é um exemplo simples de programa em linguagem C, inspirado no jogo **Super Trunfo**, com cartas de cidades e alguns atributos para cadastro e comparação.
+Um jogo de cartas no estilo Super Trunfo, onde cada carta representa uma cidade, incluindo atributos como estado, código, população, PIB, área, pontos turísticos, densidade populacional e PIB per capita.
 
 ## Funcionalidades
 
-- Cadastro de cartas de cidades, informando:
-  - Estado
-  - Código
-  - Nome da cidade
-  - População
-  - PIB (em bilhões)
-  - Área (em km²)
-  - Número de pontos turísticos
-- Cálculos automáticos:
-  - Densidade populacional
-  - PIB per capita
-- Listagem das cartas cadastradas
-- Menu simples de interação
+- Cadastro de cartas de cidades
+- Listagem de cartas (todas, por estado ou por população mínima)
+- Comparação entre cartas por atributo escolhido
+- Edição e remoção de cartas
+- Salvamento/carregamento em arquivo CSV
 
-## Como compilar e executar
+## Como compilar
 
-1. Compile o código (exemplo para GCC):
-   ```
-   gcc super_trunfo_cidades.c -o super_trunfo_cidades
-   ```
-2. Execute o programa:
-   ```
-   ./super_trunfo_cidades
-   ```
-
-## Exemplo de uso
-
-```
-Bem-vindo ao Super Trunfo - Cidades do Mundo!
-
-Menu:
-1 - Cadastrar nova carta
-2 - Listar cartas cadastradas
-0 - Sair
-Escolha uma opção: 1
-Digite o nome do estado: Bahia
-...
+No terminal, execute:
+```sh
+gcc -o super_trunfo_cidades super_trunfo_cidades.c
 ```
 
-## Possíveis melhorias
+## Como executar
 
-- Comparar atributos entre cartas (como no jogo Super Trunfo original)
-- Salvar e carregar cartas em arquivos
-- Limitar ou expandir o número máximo de cartas
-- Interface gráfica
+```sh
+./super_trunfo_cidades
+```
 
----
+## Estrutura do arquivo de cartas
 
-Feito para fins didáticos.
+As cartas são salvas em `cartas.csv` no formato:
+```
+"Estado",codigo,"Cidade",populacao,PIB,area,pontosTuristicos,densidadePopulacional,PIBperCapita
+```
+Exemplo:
+```
+"São Paulo",3550308,"São Paulo",12300000,730.00,1521.00,10,8082.22,59349.59
+```
+
+## Licença
+
+MIT
