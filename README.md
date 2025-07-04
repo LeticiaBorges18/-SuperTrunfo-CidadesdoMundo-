@@ -31,7 +31,7 @@ As cartas são salvas em `cartas.csv` no formato:
 ```
 Exemplo:
 ```
-"São Paulo",3550308,"São Paulo",12300000,730.00,1521.00,10,8082.22,59349.59
+"Bahia",3550308,"Salvador",12300000,730.00,1521.00,10,8082.22,59349.59
 ```
 
 ## Licença
